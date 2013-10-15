@@ -1,0 +1,43 @@
+{
+	"name": "css.escape",
+	"version": "0.1.0",
+	"description": "A robust polyfill for the `CSS.escape` utility method as defined in CSSOM.",
+	"homepage": "http://mths.be/cssescape",
+	"main": "css.escape.js",
+	"keywords": [
+		"string",
+		"unicode",
+		"identifier",
+		"css",
+		"cssom",
+		"polyfill"
+	],
+	"licenses": [
+		{
+			"type": "MIT",
+			"url": "http://mths.be/mit"
+		}
+	],
+	"author": {
+		"name": "Mathias Bynens",
+		"url": "http://mathiasbynens.be/"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/mathiasbynens/CSS.escape.git"
+	},
+	"bugs": {
+		"url": "https://github.com/mathiasbynens/CSS.escape/issues"
+	},
+	"files": [
+		"LICENSE-MIT.txt",
+		"css.escape.js"
+	],
+	"directories": {
+		"test": "tests"
+	},
+	"scripts": {
+		"test": "node tests/tests.js",
+		"cover": "istanbul cover --report html --verbose --dir coverage tests/tests.js"
+	}
+}
