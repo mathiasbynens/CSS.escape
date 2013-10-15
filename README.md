@@ -1,6 +1,6 @@
 # `CSS.escape` polyfill [![Build status](https://travis-ci.org/mathiasbynens/CSS.escape.png?branch=master)](https://travis-ci.org/mathiasbynens/CSS.escape)
 
-A robust polyfill for [the `CSS.escape` utility method as defined in CSSOM](http://dev.w3.org/csswg/cssom/#the-css.escape()-method).
+A robust polyfill for [the `CSS.escape` utility method as defined in CSSOM](http://dev.w3.org/csswg/cssom/#the-css.escape%28%29-method).
 
 For a more powerful alternative, consider using [cssesc](http://mths.be/cssesc), which automatically takes care of excessive whitespace, and has many options to customize the output.
 
