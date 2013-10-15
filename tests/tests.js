@@ -53,10 +53,16 @@ assertEquals(CSS.escape('-9a'), '-\\39 a');
 
 assertEquals(CSS.escape('--a'), '-\\-a');
 
-assertEquals(CSS.escape('\x80\x2D\x5F'), '\\80 \x2D\x5F');
+assertEquals(CSS.escape('\x80\x2D\x5F\xA9'), '\\80 \x2D\x5F\xA9');
 assertEquals(CSS.escape('\xA0\xA1\xA2'), '\xA0\xA1\xA2');
 assertEquals(CSS.escape('a0123456789b'), 'a0123456789b');
 assertEquals(CSS.escape('abcdefghijklmnopqrstuvwxyz'), 'abcdefghijklmnopqrstuvwxyz');
 assertEquals(CSS.escape('ABCDEFGHIJKLMNOPQRSTUVWXYZ'), 'ABCDEFGHIJKLMNOPQRSTUVWXYZ');
 
 assertEquals(CSS.escape('\x20\x21\x78\x79'), '\\ \\!xy');
+
+// astral symbol (U+1D306 TETRAGRAM FOR CENTRE)
+assertEquals(CSS.escape('\uD834\uDF06'), '\uD834\uDF06');
+// lone surrogates
+assertEquals(CSS.escape('\uDF06'), '\uDF06');
+assertEquals(CSS.escape('\uD834'), '\uD834');
