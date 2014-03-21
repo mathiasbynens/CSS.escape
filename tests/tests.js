@@ -8,6 +8,7 @@ assertEquals(CSS.escape.length, 1);
 
 assertThrows(function() { CSS.escape('\0'); }, Error);
 assertThrows(function() { CSS.escape('a\0'); }, Error);
+assertThrows(function() { CSS.escape('\0b'); }, Error);
 assertThrows(function() { CSS.escape('a\0b'); }, Error);
 
 assertEquals(CSS.escape(), 'undefined');
