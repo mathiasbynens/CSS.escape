@@ -1,6 +1,6 @@
 {
 	"name": "css.escape",
-	"version": "0.1.0",
+	"version": "0.2.0",
 	"description": "A robust polyfill for the `CSS.escape` utility method as defined in CSSOM.",
 	"homepage": "http://mths.be/cssescape",
 	"main": "css.escape.js",
