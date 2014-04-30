@@ -29,25 +29,20 @@
 				if (
 					// If the character is in the range [\1-\1F] (U+0001 to U+001F) or is
 					// U+007F, […]
-					(codeUnit >= 0x0001 && codeUnit <= 0x001F) ||
-					codeUnit == 0x007F ||
+					(codeUnit >= 0x0001 && codeUnit <= 0x001F) || codeUnit == 0x007F ||
 					// If the character is the first character and is in the range [0-9]
 					// (U+0030 to U+0039), […]
 					(index == 0 && codeUnit >= 0x0030 && codeUnit <= 0x0039) ||
 					// If the character is the second character and is in the range [0-9]
 					// (U+0030 to U+0039) and the first character is a `-` (U+002D), […]
-					(index == 1 && codeUnit >= 0x0030 && codeUnit <= 0x0039 && firstCodeUnit == 0x002D)
+					(
+						index == 1 &&
+						codeUnit >= 0x0030 && codeUnit <= 0x0039 &&
+						firstCodeUnit == 0x002D
+					)
 				) {
 					// http://dev.w3.org/csswg/cssom/#escape-a-character-as-code-point
 					result += '\\' + codeUnit.toString(16) + ' ';
-					continue;
-				}
-
-				// If the character is the second character and is `-` (U+002D) and the
-				// first character is `-` as well, […]
-				if (index == 1 && codeUnit == 0x002D && firstCodeUnit == 0x002D) {
-					// http://dev.w3.org/csswg/cssom/#escape-a-character
-					result += '\\' + string.charAt(index);
 					continue;
 				}
 
