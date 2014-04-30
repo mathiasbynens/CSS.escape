@@ -27,10 +27,10 @@
 				}
 
 				if (
-					// If the character is in the range [\1-\1F] (U+0001 to U+001F) or
-					// [\7F-\9F] (U+007F to U+009F), […]
+					// If the character is in the range [\1-\1F] (U+0001 to U+001F) or is
+					// U+007F, […]
 					(codeUnit >= 0x0001 && codeUnit <= 0x001F) ||
-					(codeUnit >= 0x007F && codeUnit <= 0x009F) ||
+					codeUnit == 0x007F ||
 					// If the character is the first character and is in the range [0-9]
 					// (U+0030 to U+0039), […]
 					(index == 0 && codeUnit >= 0x0030 && codeUnit <= 0x0039) ||
