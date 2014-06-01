@@ -7,6 +7,12 @@
 
 	var CSS = root.CSS;
 
+	var InvalidCharacterError = function(message) {
+		this.message = message;
+	};
+	InvalidCharacterError.prototype = new Error;
+	InvalidCharacterError.prototype.name = 'InvalidCharacterError';
+
 	if (!CSS.escape) {
 		// http://dev.w3.org/csswg/cssom/#serialize-an-identifier
 		CSS.escape = function(value) {
@@ -24,7 +30,9 @@
 				// If the character is NULL (U+0000), then throw an
 				// `InvalidCharacterError` exception and terminate these steps.
 				if (codeUnit == 0x0000) {
-					throw Error('INVALID_CHARACTER_ERR');
+					throw new InvalidCharacterError(
+						'Invalid character: the input contains U+0000.'
+					);
 				}
 
 				if (

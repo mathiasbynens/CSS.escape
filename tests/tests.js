@@ -6,10 +6,14 @@ require('../css.escape.js');
 
 assertEquals(CSS.escape.length, 1);
 
-assertThrows(function() { CSS.escape('\0'); }, Error);
-assertThrows(function() { CSS.escape('a\0'); }, Error);
-assertThrows(function() { CSS.escape('\0b'); }, Error);
-assertThrows(function() { CSS.escape('a\0b'); }, Error);
+var checkError = function(error) {
+	return error.name == 'InvalidCharacterError';
+};
+
+assertThrows(function() { CSS.escape('\0'); }, checkError);
+assertThrows(function() { CSS.escape('a\0'); }, checkError);
+assertThrows(function() { CSS.escape('\0b'); }, checkError);
+assertThrows(function() { CSS.escape('a\0b'); }, checkError);
 
 assertEquals(CSS.escape(), 'undefined');
 assertEquals(CSS.escape(true), 'true');
