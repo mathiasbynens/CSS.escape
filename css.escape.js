@@ -14,7 +14,7 @@
 	InvalidCharacterError.prototype.name = 'InvalidCharacterError';
 
 	if (!CSS.escape) {
-		// http://dev.w3.org/csswg/cssom/#serialize-an-identifier
+		// https://drafts.csswg.org/cssom/#serialize-an-identifier
 		CSS.escape = function(value) {
 			var string = String(value);
 			var length = string.length;
@@ -50,7 +50,7 @@
 						firstCodeUnit == 0x002D
 					)
 				) {
-					// http://dev.w3.org/csswg/cssom/#escape-a-character-as-code-point
+					// https://drafts.csswg.org/cssom/#escape-a-character-as-code-point
 					result += '\\' + codeUnit.toString(16) + ' ';
 					continue;
 				}
@@ -97,7 +97,7 @@
 				}
 
 				// Otherwise, the escaped character.
-				// https://dev.w3.org/csswg/cssom/#escape-a-character
+				// https://drafts.csswg.org/cssom/#escape-a-character
 				result += '\\' + string.charAt(index);
 
 			}
