@@ -58,7 +58,7 @@ assertEquals(CSS.escape('-9a'), '-\\39 a');
 
 assertEquals(CSS.escape('-'), '\\-');
 assertEquals(CSS.escape('-a'), '-a');
-assertEquals(CSS.escape('--'), '-\\-');
+assertEquals(CSS.escape('--'), '--');
 assertEquals(CSS.escape('--a'), '--a');
 
 assertEquals(CSS.escape('\x80\x2D\x5F\xA9'), '\x80\x2D\x5F\xA9');

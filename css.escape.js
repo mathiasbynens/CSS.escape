@@ -66,19 +66,6 @@
 					continue;
 				}
 
-				if (
-					// If the character is the second character and is a `-` (U+002D),
-					// and the first character is also a `-` (U+002D), and there is no
-					// third character, […]
-					index == 1 &&
-					length == 2 &&
-					codeUnit == 0x002D &&
-					firstCodeUnit == 0x002D
-				) {
-					result += '\\' + string.charAt(index);
-					continue;
-				}
-
 				// If the character is not handled by one of the above rules and is
 				// greater than or equal to U+0080, is `-` (U+002D) or `_` (U+005F), or
 				// is in one of the ranges [0-9] (U+0030 to U+0039), [A-Z] (U+0041 to
