@@ -33,7 +33,7 @@
 			// If the character is NULL (U+0000), then the REPLACEMENT CHARACTER
 			// (U+FFFD) escaped as a code point.
 			if (codeUnit == 0x0000) {
-				result += '\\FFFD ';
+				result += '\\fffd ';
 				continue;
 			}
 
