@@ -1,4 +1,4 @@
-/*! https://mths.be/cssescape v1.1.0 by @mathias | MIT license */
+/*! https://mths.be/cssescape v1.2.0 by @mathias | MIT license */
 ;(function(root) {
 
 	if (!root.CSS) {

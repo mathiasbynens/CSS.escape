@@ -1,6 +1,6 @@
 {
 	"name": "css.escape",
-	"version": "1.1.0",
+	"version": "1.2.0",
 	"description": "A robust polyfill for the `CSS.escape` utility method as defined in CSSOM.",
 	"homepage": "https://mths.be/cssescape",
 	"main": "css.escape.js",
@@ -29,10 +29,10 @@
 	"scripts": {
 		"test": "node tests/tests.js",
 		"cover": "istanbul cover --report html --verbose --dir coverage tests/tests.js",
-		"coveralls": "istanbul cover --verbose --dir coverage tests/tests.js && coveralls < coverage/lcov.info|coveralls < coverage/lcov.info; rm -rf coverage/lcov*"
+		"coveralls": "istanbul cover --verbose --dir coverage tests/tests.js && coveralls < coverage/lcov.info; rm -rf coverage/lcov*"
 	},
 	"devDependencies": {
-		"coveralls": "^2.11.2",
-		"istanbul": "^0.3.11"
+		"coveralls": "^2.11.4",
+		"istanbul": "^0.4.1"
 	}
 }
