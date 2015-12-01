@@ -7,12 +7,6 @@
 
 	var CSS = root.CSS;
 
-	var InvalidCharacterError = function(message) {
-		this.message = message;
-	};
-	InvalidCharacterError.prototype = new Error;
-	InvalidCharacterError.prototype.name = 'InvalidCharacterError';
-
 	if (!CSS.escape) {
 		// https://drafts.csswg.org/cssom/#serialize-an-identifier
 		CSS.escape = function(value) {
@@ -27,12 +21,11 @@
 				// Note: there’s no need to special-case astral symbols, surrogate
 				// pairs, or lone surrogates.
 
-				// If the character is NULL (U+0000), then throw an
-				// `InvalidCharacterError` exception and terminate these steps.
+				// If the character is NULL (U+0000), then the REPLACEMENT CHARACTER
+				// (U+FFFD) escaped as a code point.
 				if (codeUnit == 0x0000) {
-					throw new InvalidCharacterError(
-						'Invalid character: the input contains U+0000.'
-					);
+					result += '\\FFFD ';
+					continue;
 				}
 
 				if (
