@@ -31,9 +31,9 @@
 			// pairs, or lone surrogates.
 
 			// If the character is NULL (U+0000), then the REPLACEMENT CHARACTER
-			// (U+FFFD) escaped as a code point.
+			// (U+FFFD).
 			if (codeUnit == 0x0000) {
-				result += '\\fffd ';
+				result += '\uFFFD';
 				continue;
 			}
 

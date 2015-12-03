@@ -6,10 +6,10 @@ require('../css.escape.js');
 
 assertEquals(CSS.escape.length, 1);
 
-assertEquals(CSS.escape('\0'), '\\fffd ');
-assertEquals(CSS.escape('a\0'), 'a\\fffd ');
-assertEquals(CSS.escape('\0b'), '\\fffd b');
-assertEquals(CSS.escape('a\0b'), 'a\\fffd b');
+assertEquals(CSS.escape('\0'), '\uFFFD');
+assertEquals(CSS.escape('a\0'), 'a\uFFFD');
+assertEquals(CSS.escape('\0b'), '\uFFFDb');
+assertEquals(CSS.escape('a\0b'), 'a\uFFFDb');
 
 assertEquals(CSS.escape(), 'undefined');
 assertEquals(CSS.escape(true), 'true');
