@@ -11,6 +11,11 @@ assertEquals(CSS.escape('a\0'), 'a\uFFFD');
 assertEquals(CSS.escape('\0b'), '\uFFFDb');
 assertEquals(CSS.escape('a\0b'), 'a\uFFFDb');
 
+assertEquals(CSS.escape('\uFFFD'), '\uFFFD');
+assertEquals(CSS.escape('a\uFFFD'), 'a\uFFFD');
+assertEquals(CSS.escape('\uFFFDb'), '\uFFFDb');
+assertEquals(CSS.escape('a\uFFFDb'), 'a\uFFFDb');
+
 assertEquals(CSS.escape(), 'undefined');
 assertEquals(CSS.escape(true), 'true');
 assertEquals(CSS.escape(false), 'false');
