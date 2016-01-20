@@ -6,7 +6,7 @@
 		module.exports = factory(root);
 	} else if (typeof define == 'function' && define.amd) {
 		// For AMD. Register as an anonymous module.
-		define(factory.bind(root, root));
+		define([], factory.bind(root, root));
 	} else {
 		// For browser globals (not exposing the function separately).
 		factory(root);
