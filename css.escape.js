@@ -19,6 +19,9 @@
 
 	// https://drafts.csswg.org/cssom/#serialize-an-identifier
 	var cssEscape = function(value) {
+		if (arguments.length == 0) {
+			throw new TypeError('`CSS.escape` requires an argument.');
+		}
 		var string = String(value);
 		var length = string.length;
 		var index = -1;

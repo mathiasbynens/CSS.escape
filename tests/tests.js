@@ -16,7 +16,8 @@ assertEquals(CSS.escape('a\uFFFD'), 'a\uFFFD');
 assertEquals(CSS.escape('\uFFFDb'), '\uFFFDb');
 assertEquals(CSS.escape('a\uFFFDb'), 'a\uFFFDb');
 
-assertEquals(CSS.escape(), 'undefined');
+assertThrows(function() { CSS.escape(); }, TypeError);
+assertEquals(CSS.escape(undefined), 'undefined');
 assertEquals(CSS.escape(true), 'true');
 assertEquals(CSS.escape(false), 'false');
 assertEquals(CSS.escape(null), 'null');
