@@ -28,6 +28,34 @@ require('css.escape');
 require('CSS.escape');
 ```
 
+### in Gulp(examples)
+```js
+var CSSEscape = require('CSS.escape');
+
+gulp.task('language', function () {
+
+    var kor = JSON.parse(fs.readFileSync('assets/lang/kor.json', 'utf8'));
+    kor["@each"] = (function(){
+        var arr = [];
+        for (var k in this) {
+            arr.push({"@key": CSSEscape(k), "@value": (this[k]) });
+        }
+        return arr;
+    }).call(kor);
+
+    gulp.src("assets/lang/lang-kor.css")
+        .pipe(mustache(kor))
+        .pipe(gulp.dest("assets/dist"));
+});
+```
+
+**kor.json**
+```
+{
+	"lang": "language"
+}
+```
+
 ## Author
 
 | [![twitter/mathias](https://gravatar.com/avatar/24e08a9ea84deb17ae121074d0f17125?s=70)](https://twitter.com/mathias "Follow @mathias on Twitter") |
