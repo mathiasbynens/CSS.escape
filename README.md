@@ -22,10 +22,6 @@ Then, in [Node.js](https://nodejs.org/):
 
 ```js
 require('css.escape');
-
-// On Windows and on Mac systems with default settings, case doesn’t matter,
-// which allows you to do this instead:
-require('CSS.escape');
 ```
 
 ## Author
