@@ -12,6 +12,9 @@
 		factory(root);
 	}
 }(typeof global != 'undefined' ? global : this, function(root) {
+	if (!root) {
+		root = {};
+    }
 
 	if (root.CSS && root.CSS.escape) {
 		return root.CSS.escape;
